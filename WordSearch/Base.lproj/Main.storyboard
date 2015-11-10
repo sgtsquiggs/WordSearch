@@ -1,25 +1,166 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z9P-rP-6mR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Puzzle View Controller-->
+        <scene sceneID="hWI-50-l8h">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z9P-rP-6mR" customClass="PuzzleViewController" customModule="WordSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="jQ0-oF-zZY"/>
+                        <viewControllerLayoutGuide type="bottom" id="gHn-sY-8Kr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="ImQ-H5-CnO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjM-h9-ZGx">
+                                <rect key="frame" x="103" y="103" width="394" height="394"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WjM-h9-ZGx" secondAttribute="height" multiplier="1:1" id="uJC-18-O1Y"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="8N1-0B-z8b" kind="embed" id="FK7-Cu-EDu"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6J-gT-40v">
+                                <rect key="frame" x="248" y="30" width="105" height="43"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WjM-h9-ZGx" firstAttribute="leading" secondItem="ImQ-H5-CnO" secondAttribute="leadingMargin" constant="60" id="4P6-mb-Vlf"/>
+                            <constraint firstItem="WjM-h9-ZGx" firstAttribute="centerX" secondItem="ImQ-H5-CnO" secondAttribute="centerX" id="7R0-yh-BOl"/>
+                            <constraint firstItem="WjM-h9-ZGx" firstAttribute="centerY" secondItem="ImQ-H5-CnO" secondAttribute="centerY" id="9ql-cG-jGz"/>
+                            <constraint firstItem="P6J-gT-40v" firstAttribute="centerX" secondItem="ImQ-H5-CnO" secondAttribute="centerX" id="FYd-7Z-2za"/>
+                            <constraint firstItem="WjM-h9-ZGx" firstAttribute="top" secondItem="P6J-gT-40v" secondAttribute="bottom" constant="30" id="Fcq-Lf-dnh"/>
+                            <constraint firstItem="P6J-gT-40v" firstAttribute="top" secondItem="jQ0-oF-zZY" secondAttribute="bottom" constant="10" id="HWc-cJ-mvj"/>
+                            <constraint firstItem="WjM-h9-ZGx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ImQ-H5-CnO" secondAttribute="leadingMargin" constant="60" id="Mbi-Di-e6t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WjM-h9-ZGx" secondAttribute="trailing" constant="60" id="Xq0-xS-xl6"/>
+                            <constraint firstItem="WjM-h9-ZGx" firstAttribute="top" secondItem="jQ0-oF-zZY" secondAttribute="bottom" constant="60" id="aQL-9W-xDK"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4P6-mb-Vlf"/>
+                                <exclude reference="Xq0-xS-xl6"/>
+                                <exclude reference="aQL-9W-xDK"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="4P6-mb-Vlf"/>
+                                <include reference="Xq0-xS-xl6"/>
+                                <include reference="aQL-9W-xDK"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="b6z-AA-QcU"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vps-Tq-8js" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-129" y="156"/>
+        </scene>
+        <!--Grid View Controller-->
+        <scene sceneID="gw3-ed-DGI">
+            <objects>
+                <collectionViewController id="NxT-AM-eZY" customClass="GridViewController" customModule="WordSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ba3-1s-yLu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RRv-an-gjM">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CharacterCell" id="MS9-M9-dZY" customClass="CharacterCell" customModule="WordSearch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4P-Da-1UR">
+                                            <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="i4P-Da-1UR" secondAttribute="bottom" id="3ic-6X-gDs"/>
+                                    <constraint firstItem="i4P-Da-1UR" firstAttribute="top" secondItem="MS9-M9-dZY" secondAttribute="topMargin" id="MLn-Ru-mQP"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="i4P-Da-1UR" secondAttribute="trailing" id="Xj4-pe-dqf"/>
+                                    <constraint firstItem="i4P-Da-1UR" firstAttribute="leading" secondItem="MS9-M9-dZY" secondAttribute="leadingMargin" id="uMs-od-kNP"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="textLabel" destination="i4P-Da-1UR" id="FfC-bC-9Zk"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="NxT-AM-eZY" id="whp-rg-JQG"/>
+                            <outlet property="delegate" destination="NxT-AM-eZY" id="kJd-Ai-Rbi"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3T-u0-erL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="574.5" y="156"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ohx-AW-hyY">
+            <objects>
+                <viewController id="8N1-0B-z8b" customClass="ViewController" customModule="WordSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gYW-J6-1j8"/>
+                        <viewControllerLayoutGuide type="bottom" id="jL2-vR-Dxh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ymS-QM-hTa">
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="394"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1H-ot-lEU" customClass="PuzzleView" customModule="WordSearch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="394"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Z1H-ot-lEU" secondAttribute="trailing" id="KfK-G5-ZTr"/>
+                            <constraint firstItem="Z1H-ot-lEU" firstAttribute="top" secondItem="gYW-J6-1j8" secondAttribute="bottom" id="TFE-4o-BIi"/>
+                            <constraint firstItem="jL2-vR-Dxh" firstAttribute="top" secondItem="Z1H-ot-lEU" secondAttribute="bottom" id="V6D-K0-GYl"/>
+                            <constraint firstItem="Z1H-ot-lEU" firstAttribute="leading" secondItem="ymS-QM-hTa" secondAttribute="leading" id="VvF-iG-Gcu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="puzzleView" destination="Z1H-ot-lEU" id="AIg-pU-n05"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcs-eB-vZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471" y="574"/>
         </scene>
     </scenes>
 </document>

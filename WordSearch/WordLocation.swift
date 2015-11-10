@@ -9,23 +9,23 @@
 import Foundation
 
 struct WordLocation {
-	let word: String
-	let coordinates: [Coordinate]
+    let word: String
+    let coordinates: [Coordinate]
 
-	static func decodeJson(json: AnyObject) -> [WordLocation]? {
-		guard let dict: [String:String] = Dictionary.decodeJson({ String.decodeJson($0) }, { String.decodeJson($0) }, json) else {
-			assertionFailure("json is not a [String:String]")
-			return nil
-		}
+    static func decodeJson(json: AnyObject) -> [WordLocation]? {
+        guard let dict: [String:String] = Dictionary.decodeJson({ String.decodeJson($0) }, { String.decodeJson($0) }, json) else {
+            assertionFailure("json is not a [String:String]")
+            return nil
+        }
 
-		var result: [WordLocation] = []
-		for (key, value) in dict {
-			guard let coordinates: [Coordinate] = Coordinate.decodeCsv(key) else {
-				assertionFailure("coordinates not valid")
-				return nil
-			}
-			result.append(WordLocation(word: value, coordinates: coordinates))
-		}
-		return result
-	}
+        var result: [WordLocation] = []
+        for (key, value) in dict {
+            guard let coordinates: [Coordinate] = Coordinate.decodeCsv(key) else {
+                assertionFailure("coordinates not valid")
+                return nil
+            }
+            result.append(WordLocation(word: value, coordinates: coordinates))
+        }
+        return result
+    }
 }
