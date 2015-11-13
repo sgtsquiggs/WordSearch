@@ -8,13 +8,23 @@
 
 import Foundation
 
+/// ASSUMPTION: `character_grid` will always be a square 2d array
+
 struct Puzzle {
     let sourceLanguage: String
     let targetLanguage: String
     let word: String
     let characterGrid: [[String]]
     let wordLocations: [WordLocation]
+    let rows: Int
+    let columns: Int
+}
 
+// MARK: - JsonGen
+// Based on swift-json-gen, the only sane was I found to load json into an immutable struct
+// https://github.com/tomlokhorst/swift-json-gen
+
+extension Puzzle {
     static func decodeJson(json: AnyObject) -> Puzzle? {
         guard let dict = json as? [String:AnyObject] else {
             assertionFailure("json is not a dictionary")
@@ -65,7 +75,10 @@ struct Puzzle {
             assertionFailure("field word_locations is not word locations")
             return nil
         }
+
+        let rows = characterGrid.count
+        let columns = characterGrid.first!.count
         
-        return Puzzle(sourceLanguage: sourceLanguage, targetLanguage: targetLanguage, word: word, characterGrid: characterGrid, wordLocations: wordLocations)
+        return Puzzle(sourceLanguage: sourceLanguage, targetLanguage: targetLanguage, word: word, characterGrid: characterGrid, wordLocations: wordLocations, rows: rows, columns: columns)
     }
 }

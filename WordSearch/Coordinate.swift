@@ -9,27 +9,59 @@
 import Foundation
 
 struct Coordinate {
-    let x: Int16
-    let y: Int16
+    let x: Int
+    let y: Int
+}
 
+// MARK: - JsonGen
+// Similar to swift-json-gen, adapted for this unusual csv format
+// https://github.com/tomlokhorst/swift-json-gen
+
+extension Coordinate : CustomStringConvertible {
+    // The source data represents the coordinates in a string
+    // Example: "x,y,x,y,x,y,x,y,x,y,x,y"
+
+    init(_ x: Int, _ y: Int) {
+        self.x = x
+        self.y = y
+    }
+
+    var description: String {
+        return "[\(x),\(y)]"
+    }
+
+    /// Decode coordinates from csv format "x1,y1,x2,y2,x3,y3,x4,y4"
     static func decodeCsv(csv: String) -> [Coordinate]? {
         let strings = csv.componentsSeparatedByString(",")
         if strings.count % 2 != 0 {
             return nil
         }
 
-        let numbers = strings.flatMap({ Int16($0) })
+        let numbers = strings.flatMap({ Int($0) })
         if strings.count != numbers.count {
             return nil
         }
 
         var results: [Coordinate] = []
         for var index = 0; index < numbers.count; index+=2 {
-            results.append(Coordinate(x: numbers[index], y: numbers[index+1]))
+            results.append(Coordinate(numbers[index], numbers[index+1]))
         }
         return results
     }
+
+    func isCardinalToCoordinate(coordinate: Coordinate) -> Bool {
+        let deltaX = self.x - coordinate.x
+        let deltaY = self.y - coordinate.y
+        let radians = atan2(Double(deltaX), Double(deltaY))
+        let degrees = abs(radians * (180.0 / M_PI)) % 90
+        guard degrees == 0 || degrees == 45 else {
+            return false
+        }
+        return true
+    }
 }
+
+// MARK: - Equatable
 
 extension Coordinate : Equatable {}
 // comparison operator defined in global scope

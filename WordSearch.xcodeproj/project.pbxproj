@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34AD78AD1BF125CA003B14CD /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD78AC1BF125CA003B14CD /* CharacterCell.swift */; };
+		3445A90B1BF598A0009CC040 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445A90A1BF598A0009CC040 /* LinkedList.swift */; };
+		3445A90D1BF5B0B8009CC040 /* CharacterGridViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445A90C1BF5B0B8009CC040 /* CharacterGridViewDelegate.swift */; };
+		344642FE1BF42B830020C14D /* CharacterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344642FD1BF42B830020C14D /* CharacterLabel.swift */; };
+		344643001BF440BA0020C14D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344642FF1BF440BA0020C14D /* Extensions.swift */; };
+		347470201BF2EFD700A0605F /* JsonGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3474701F1BF2EFD700A0605F /* JsonGen.swift */; };
 		34D695D41BEE94BD0078B8BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D695D31BEE94BD0078B8BA /* AppDelegate.swift */; };
-		34D695D61BEE94BD0078B8BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D695D51BEE94BD0078B8BA /* ViewController.swift */; };
+		34D695D61BEE94BD0078B8BA /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D695D51BEE94BD0078B8BA /* PuzzleViewController.swift */; };
 		34D695D91BEE94BD0078B8BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D695D71BEE94BD0078B8BA /* Main.storyboard */; };
 		34D695DB1BEE94BD0078B8BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D695DA1BEE94BD0078B8BA /* Assets.xcassets */; };
 		34D695DE1BEE94BD0078B8BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D695DC1BEE94BD0078B8BA /* LaunchScreen.storyboard */; };
 		34D696021BEE95940078B8BA /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D696011BEE95940078B8BA /* Puzzle.swift */; };
-		34D696041BEEA3E00078B8BA /* JsonGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D696031BEEA3E00078B8BA /* JsonGen.swift */; };
 		34D696061BEEB3F50078B8BA /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D696051BEEB3F50078B8BA /* Coordinate.swift */; };
 		34D696081BEEC01E0078B8BA /* WordLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D696071BEEC01E0078B8BA /* WordLocation.swift */; };
 		34F3DEDF1BEFC1C7008B8229 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3DEDE1BEFC1C7008B8229 /* Network.swift */; };
@@ -22,22 +25,23 @@
 		34F3DEEF1BEFD7B8008B8229 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 34F3DEEC1BEFD7B8008B8229 /* LICENSE */; };
 		34F3DEF01BEFD7B8008B8229 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3DEED1BEFD7B8008B8229 /* Result.swift */; };
 		34F3DEF11BEFD7B8008B8229 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3DEEE1BEFD7B8008B8229 /* ResultType.swift */; };
-		34F3DEF51BF02A00008B8229 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3DEF41BF02A00008B8229 /* PuzzleView.swift */; };
-		34F3DEF91BF10EBE008B8229 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3DEF81BF10EBE008B8229 /* GridViewController.swift */; };
-		34F3DEFB1BF10F36008B8229 /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3DEFA1BF10F36008B8229 /* PuzzleViewController.swift */; };
+		34F3DEF51BF02A00008B8229 /* CharacterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3DEF41BF02A00008B8229 /* CharacterGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		34AD78AC1BF125CA003B14CD /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		3445A90A1BF598A0009CC040 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		3445A90C1BF5B0B8009CC040 /* CharacterGridViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterGridViewDelegate.swift; sourceTree = "<group>"; };
+		344642FD1BF42B830020C14D /* CharacterLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterLabel.swift; sourceTree = "<group>"; };
+		344642FF1BF440BA0020C14D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3474701F1BF2EFD700A0605F /* JsonGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonGen.swift; sourceTree = "<group>"; };
 		34D695D01BEE94BC0078B8BA /* WordSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D695D31BEE94BD0078B8BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		34D695D51BEE94BD0078B8BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34D695D51BEE94BD0078B8BA /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
 		34D695D81BEE94BD0078B8BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34D695DA1BEE94BD0078B8BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34D695DD1BEE94BD0078B8BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34D695DF1BEE94BD0078B8BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D696011BEE95940078B8BA /* Puzzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
-		34D696031BEEA3E00078B8BA /* JsonGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonGen.swift; sourceTree = "<group>"; };
 		34D696051BEEB3F50078B8BA /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		34D696071BEEC01E0078B8BA /* WordLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordLocation.swift; sourceTree = "<group>"; };
 		34F3DEDE1BEFC1C7008B8229 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -45,9 +49,7 @@
 		34F3DEEC1BEFD7B8008B8229 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		34F3DEED1BEFD7B8008B8229 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		34F3DEEE1BEFD7B8008B8229 /* ResultType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
-		34F3DEF41BF02A00008B8229 /* PuzzleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
-		34F3DEF81BF10EBE008B8229 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
-		34F3DEFA1BF10F36008B8229 /* PuzzleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
+		34F3DEF41BF02A00008B8229 /* CharacterGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3474701E1BF2EFD700A0605F /* JsonGen */ = {
+			isa = PBXGroup;
+			children = (
+				3474701F1BF2EFD700A0605F /* JsonGen.swift */,
+			);
+			path = JsonGen;
+			sourceTree = "<group>";
+		};
 		34D695C71BEE94BC0078B8BA = {
 			isa = PBXGroup;
 			children = (
@@ -85,11 +95,10 @@
 			isa = PBXGroup;
 			children = (
 				34D695D31BEE94BD0078B8BA /* AppDelegate.swift */,
-				34D695D51BEE94BD0078B8BA /* ViewController.swift */,
-				34F3DEF41BF02A00008B8229 /* PuzzleView.swift */,
-				34F3DEF81BF10EBE008B8229 /* GridViewController.swift */,
-				34F3DEFA1BF10F36008B8229 /* PuzzleViewController.swift */,
-				34AD78AC1BF125CA003B14CD /* CharacterCell.swift */,
+				34D695D51BEE94BD0078B8BA /* PuzzleViewController.swift */,
+				34F3DEF41BF02A00008B8229 /* CharacterGridView.swift */,
+				3445A90C1BF5B0B8009CC040 /* CharacterGridViewDelegate.swift */,
+				344642FD1BF42B830020C14D /* CharacterLabel.swift */,
 				34D695D71BEE94BD0078B8BA /* Main.storyboard */,
 				34D695DA1BEE94BD0078B8BA /* Assets.xcassets */,
 				34D695DC1BEE94BD0078B8BA /* LaunchScreen.storyboard */,
@@ -97,8 +106,9 @@
 				34D696011BEE95940078B8BA /* Puzzle.swift */,
 				34D696071BEEC01E0078B8BA /* WordLocation.swift */,
 				34D696051BEEB3F50078B8BA /* Coordinate.swift */,
-				34D696031BEEA3E00078B8BA /* JsonGen.swift */,
 				34F3DEDE1BEFC1C7008B8229 /* Network.swift */,
+				344642FF1BF440BA0020C14D /* Extensions.swift */,
+				3445A90A1BF598A0009CC040 /* LinkedList.swift */,
 			);
 			path = WordSearch;
 			sourceTree = "<group>";
@@ -106,6 +116,7 @@
 		34F3DEE01BEFD07E008B8229 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				3474701E1BF2EFD700A0605F /* JsonGen */,
 				34F3DEE61BEFD4E9008B8229 /* JustHTTP */,
 				34F3DEEB1BEFD7B8008B8229 /* Result */,
 			);
@@ -203,20 +214,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3445A90D1BF5B0B8009CC040 /* CharacterGridViewDelegate.swift in Sources */,
+				344642FE1BF42B830020C14D /* CharacterLabel.swift in Sources */,
 				34F3DEF11BEFD7B8008B8229 /* ResultType.swift in Sources */,
 				34F3DEF01BEFD7B8008B8229 /* Result.swift in Sources */,
 				34D696081BEEC01E0078B8BA /* WordLocation.swift in Sources */,
 				34D696021BEE95940078B8BA /* Puzzle.swift in Sources */,
-				34D695D61BEE94BD0078B8BA /* ViewController.swift in Sources */,
-				34F3DEFB1BF10F36008B8229 /* PuzzleViewController.swift in Sources */,
-				34AD78AD1BF125CA003B14CD /* CharacterCell.swift in Sources */,
+				34D695D61BEE94BD0078B8BA /* PuzzleViewController.swift in Sources */,
 				34F3DEE91BEFD4E9008B8229 /* Just.swift in Sources */,
 				34D695D41BEE94BD0078B8BA /* AppDelegate.swift in Sources */,
-				34D696041BEEA3E00078B8BA /* JsonGen.swift in Sources */,
-				34F3DEF91BF10EBE008B8229 /* GridViewController.swift in Sources */,
-				34F3DEF51BF02A00008B8229 /* PuzzleView.swift in Sources */,
+				34F3DEF51BF02A00008B8229 /* CharacterGridView.swift in Sources */,
 				34F3DEDF1BEFC1C7008B8229 /* Network.swift in Sources */,
+				347470201BF2EFD700A0605F /* JsonGen.swift in Sources */,
+				3445A90B1BF598A0009CC040 /* LinkedList.swift in Sources */,
 				34D696061BEEB3F50078B8BA /* Coordinate.swift in Sources */,
+				344643001BF440BA0020C14D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

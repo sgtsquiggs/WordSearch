@@ -11,7 +11,13 @@ import Foundation
 struct WordLocation {
     let word: String
     let coordinates: [Coordinate]
+}
 
+// MARK: - JsonGen
+// Based on swift-json-gen, the only sane was I found to load json into an immutable struct
+// https://github.com/tomlokhorst/swift-json-gen
+
+extension WordLocation {
     static func decodeJson(json: AnyObject) -> [WordLocation]? {
         guard let dict: [String:String] = Dictionary.decodeJson({ String.decodeJson($0) }, { String.decodeJson($0) }, json) else {
             assertionFailure("json is not a [String:String]")
@@ -27,5 +33,22 @@ struct WordLocation {
             result.append(WordLocation(word: value, coordinates: coordinates))
         }
         return result
+    }
+}
+
+// MARK: - Equatable
+
+extension WordLocation : Equatable {}
+// comparison operator defined in global scope
+func ==(lhs: WordLocation, rhs: WordLocation) -> Bool {
+    return lhs.word == rhs.word && lhs.coordinates == rhs.coordinates
+}
+
+// MARK: - Hashable
+
+extension WordLocation : Hashable {
+    var hashValue: Int {
+        // Shortcut. Using the word's hash because we shouldn't ever have the same word twice in a puzzle
+        return word.hashValue
     }
 }
