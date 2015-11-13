@@ -11,26 +11,13 @@ import Foundation
 struct Coordinate {
     let x: Int
     let y: Int
-}
-
-// MARK: - JsonGen
-// Similar to swift-json-gen, adapted for this unusual csv format
-// https://github.com/tomlokhorst/swift-json-gen
-
-extension Coordinate : CustomStringConvertible {
-    // The source data represents the coordinates in a string
-    // Example: "x,y,x,y,x,y,x,y,x,y,x,y"
 
     init(_ x: Int, _ y: Int) {
         self.x = x
         self.y = y
     }
 
-    var description: String {
-        return "[\(x),\(y)]"
-    }
-
-    /// Decode coordinates from csv format "x1,y1,x2,y2,x3,y3,x4,y4"
+    /// Decode array of coordinates from csv format "x1,y1,x2,y2,x3,y3,x4,y4".
     static func decodeCsv(csv: String) -> [Coordinate]? {
         let strings = csv.componentsSeparatedByString(",")
         if strings.count % 2 != 0 {

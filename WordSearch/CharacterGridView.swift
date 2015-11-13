@@ -343,12 +343,3 @@ class CharacterGridView: UIView {
             constant: 0))
     }
 }
-
-// MARK: - Misc
-
-struct Highlight {
-    let startCoordinate: Coordinate
-    let endCoordinate: Coordinate
-    let startPoint: CGPoint
-    let endPoint: CGPoint
-}

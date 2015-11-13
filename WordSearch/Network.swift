@@ -13,14 +13,7 @@ let PuzzleURLString = "https://s3.amazonaws.com/duolingo-data/s3/js2/find_challe
 typealias PuzzleResult = Result<[Puzzle], NetworkError>
 
 class Network {
-    /**
-     Request puzzles
-     - Parameter completionHandler: The completion handler to call when the load request is complete. \
-                                    This handler is executed on the main queue. \
-                                    \
-                                    The completion handler takes the following parameters: \
-                                    result: `Result<[Puzzle], NetworkError>` object
-    */
+    /// Request puzzles
     static func requestPuzzles(completionHandler: (result: PuzzleResult) -> Void) {
         Just.get(PuzzleURLString) { (r) in
             var result: PuzzleResult
@@ -47,7 +40,7 @@ class Network {
                 let lines = text.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
                 puzzles = []
                 for line in lines {
-                    if let json = decodeJson(line), puzzle = Puzzle.decodeJson(json) {
+                    if let json = decodeJsonString(line), puzzle = Puzzle.decodeJson(json) {
                         puzzles!.append(puzzle)
                     }
                 }
@@ -55,12 +48,8 @@ class Network {
         }
     }
 
-    /**
-     Convenience method to decode json object from `String`.
-     - Parameter json: The string to decode
-     - Returns: A json object or nil
-    */
-    static func decodeJson(json: String) -> AnyObject? {
+    /// Decodes `AnyObject` from json string.
+    static func decodeJsonString(json: String) -> AnyObject? {
         let data = json.dataUsingEncoding(NSUTF8StringEncoding)!
         
         do {

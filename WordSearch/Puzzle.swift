@@ -18,13 +18,8 @@ struct Puzzle {
     let wordLocations: [WordLocation]
     let rows: Int
     let columns: Int
-}
-
-// MARK: - JsonGen
-// Based on swift-json-gen, the only sane was I found to load json into an immutable struct
-// https://github.com/tomlokhorst/swift-json-gen
-
-extension Puzzle {
+    
+    /// Decodes `Puzzle` from json.
     static func decodeJson(json: AnyObject) -> Puzzle? {
         guard let dict = json as? [String:AnyObject] else {
             assertionFailure("json is not a dictionary")

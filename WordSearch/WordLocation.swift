@@ -11,13 +11,8 @@ import Foundation
 struct WordLocation {
     let word: String
     let coordinates: [Coordinate]
-}
 
-// MARK: - JsonGen
-// Based on swift-json-gen, the only sane was I found to load json into an immutable struct
-// https://github.com/tomlokhorst/swift-json-gen
-
-extension WordLocation {
+    /// Decodes `WordLocation` from json.
     static func decodeJson(json: AnyObject) -> [WordLocation]? {
         guard let dict: [String:String] = Dictionary.decodeJson({ String.decodeJson($0) }, { String.decodeJson($0) }, json) else {
             assertionFailure("json is not a [String:String]")
