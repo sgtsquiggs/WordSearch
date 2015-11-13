@@ -8,35 +8,36 @@
 
 import Foundation
 
-let PuzzleURLString = "https://s3.amazonaws.com/duolingo-data/s3/js2/find_challenges.txt"
-
-typealias PuzzleResult = Result<[Puzzle], NetworkError>
-
 class Network {
+
+    static let PuzzleURLString = "https://s3.amazonaws.com/duolingo-data/s3/js2/find_challenges.txt"
+
     /// Request puzzles
-    static func requestPuzzles(completionHandler: (result: PuzzleResult) -> Void) {
-        Just.get(PuzzleURLString) { (r) in
-            var result: PuzzleResult
+    class func requestPuzzles(completionHandler: (puzzles: [Puzzle]?, error: NSError?) -> Void) {
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string:PuzzleURLString)!
+        let request = NSURLRequest(URL: url)
+        let task = session.dataTaskWithRequest(request) { data, response, error in
             var puzzles: [Puzzle]?
-            var error: NSError?
-            // Defered results are much cleaner when you have many possible exit points
             defer {
                 if let puzzles = puzzles {
-                    completionHandler(result: Result(value: puzzles))
+                    completionHandler(puzzles: puzzles, error: nil)
                 } else if let error = error {
-                    completionHandler(result: Result(error: NetworkError(error.localizedDescription)))
+                    completionHandler(puzzles: nil, error: error)
                 } else {
-                    completionHandler(result: Result(error: NetworkError("Unable to load puzzles")))
+                    let error = NSError(
+                        domain: "com.matthewcrenshaw.WordSearch.network",
+                        code: 100,
+                        userInfo: [NSLocalizedDescriptionKey: "Unable to load puzzles"])
+                    completionHandler(puzzles: nil, error: error)
                 }
             }
-            // Check for error
-            guard r.ok else {
-                error = r.error
+            guard error == nil else {
                 assertionFailure("http request returned error")
                 return
             }
             // Decode lsj (line separated json)
-            if let text = r.text {
+            if let data = data, text = NSString(data: data, encoding: NSUTF8StringEncoding) {
                 let lines = text.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
                 puzzles = []
                 for line in lines {
@@ -46,10 +47,11 @@ class Network {
                 }
             }
         }
+        task.resume()
     }
 
     /// Decodes `AnyObject` from json string.
-    static func decodeJsonString(json: String) -> AnyObject? {
+    private class func decodeJsonString(json: String) -> AnyObject? {
         let data = json.dataUsingEncoding(NSUTF8StringEncoding)!
         
         do {
@@ -58,20 +60,5 @@ class Network {
         } catch {
             return nil
         }
-    }
-}
-
-struct NetworkError: ErrorType {
-    let message: String
-    let error: NSError?
-
-    init(_ message: String) {
-        self.message = message
-        self.error = nil
-    }
-
-    init(_ message: String, error: NSError?) {
-        self.message = message
-        self.error = error
     }
 }

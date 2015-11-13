@@ -96,7 +96,6 @@ class CharacterGridView: UIView {
                     if delegate.shouldHighlight(highlight) {
                         highlights.append(highlight)
                         delegate.didHighlight(highlight)
-                        print("highlighted!")
                     }
                 }
                 draggingHighlight = nil

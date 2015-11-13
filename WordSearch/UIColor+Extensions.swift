@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIColor {
-    static func random() -> UIColor {
+    class func random() -> UIColor {
         let hue = CGFloat(drand48())
         let saturation = CGFloat(drand48() + 0.5)
         let brightness = CGFloat(drand48() + 0.5)

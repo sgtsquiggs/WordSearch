@@ -44,8 +44,8 @@ class PuzzleViewController: UIViewController, CharacterGridViewDelegate {
         characterGridView.delegate = self
         characterGridView.highlightColor = highlightColor
 
-        Network.requestPuzzles { result in
-            if let puzzles = result.value {
+        Network.requestPuzzles { puzzles, error in
+            if let puzzles = puzzles {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.puzzles = puzzles
                 })
@@ -64,12 +64,14 @@ class PuzzleViewController: UIViewController, CharacterGridViewDelegate {
             NSStrikethroughColorAttributeName: highlightColor
         ]
         for wordLocation in puzzle.wordLocations {
+            if text.length > 0 {
+                text.appendAttributedString(NSAttributedString(string: " "))
+            }
             if matchedWordLocations.contains(wordLocation) {
                 text.appendAttributedString(NSAttributedString(string: wordLocation.word, attributes: strikeThroughAttributes))
             } else {
                 text.appendAttributedString(NSAttributedString(string: wordLocation.word))
             }
-            text.appendAttributedString(NSAttributedString(string: "\n"))
         }
     }
 
